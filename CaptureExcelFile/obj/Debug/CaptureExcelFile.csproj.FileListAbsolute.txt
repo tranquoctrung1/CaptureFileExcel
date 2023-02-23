@@ -1,0 +1,14 @@
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\bin\Debug\CaptureExcelFile.exe.config
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\bin\Debug\CaptureExcelFile.exe
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\bin\Debug\CaptureExcelFile.pdb
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.csproj.AssemblyReference.cache
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.csproj.SuggestedBindingRedirects.cache
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.Form1.resources
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.Properties.Resources.resources
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.csproj.GenerateResource.cache
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.csproj.CoreCompileInputs.cache
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.exe
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.pdb
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\bin\Debug\Aspose.Cells.dll
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\bin\Debug\Aspose.Cells.xml
+C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.csproj.CopyComplete
