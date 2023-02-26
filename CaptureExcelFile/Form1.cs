@@ -109,11 +109,11 @@ namespace CaptureExcelFile
                                 createFolderImageAction.CreateFolderImage(pathToSaveFileImage, folder);
 
                                 // capture excel file
-                                if(lengthToCaptureTotalSheet > 0)
+                                if (listIndex[1].Count > 0)
                                 {
                                     captureExcelAction.CaptureExcelWithTotalSheet(lengthToCaptureTotalSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
                                 }
-                                if(lengthToCaptureImportGoodsSheet > 0)
+                                if (listIndexImportGoods[1].Count > 0)
                                 {
                                     captureExcelAction.CaptureExcelWithImportGoodsSheet(lengthToCaptureImportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
                                 }
@@ -140,7 +140,7 @@ namespace CaptureExcelFile
                                     int rowTotalExportGoods =  createTotalRowAction.CreateTotalRowExportGoodsSheet(AppDomain.CurrentDomain.BaseDirectory + prefixFile +"_output3.xlsx", tableExportGoods, productid);
                                     lengthToCaptureExportGoodsSheet = rowTotalExportGoods;
 
-                                    if(lengthToCaptureExportGoodsSheet > 0)
+                                    if (listIndexExportGoods[1].Count > 0)
                                     {
                                         captureExcelAction.CaptureExcelWithExportGoodsSheet(lengthToCaptureExportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
                                     }
@@ -277,15 +277,15 @@ namespace CaptureExcelFile
                                     lengthToCaptureExportGoodsSheet = rowTotalExportGoods;
 
                                     // capture excel file
-                                    if(lengthToCaptureTotalSheet > 0)
+                                    if (listIndex[1].Count > 0)
                                     {
                                         captureExcelAction.CaptureExcelWithTotalSheet(lengthToCaptureTotalSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
                                     }
-                                    if(lengthToCaptureImportGoodsSheet > 0)
+                                    if (listIndexImportGoods[1].Count > 0)
                                     {
                                         captureExcelAction.CaptureExcelWithImportGoodsSheet(lengthToCaptureImportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
                                     }
-                                    if(lengthToCaptureExportGoodsSheet > 0)
+                                    if (listIndexExportGoods[1].Count > 0)
                                     {
                                         captureExcelAction.CaptureExcelWithExportGoodsSheet(lengthToCaptureExportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
                                     }
