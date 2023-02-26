@@ -109,8 +109,14 @@ namespace CaptureExcelFile
                                 createFolderImageAction.CreateFolderImage(pathToSaveFileImage, folder);
 
                                 // capture excel file
-                                captureExcelAction.CaptureExcelWithTotalSheet(lengthToCaptureTotalSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
-                                captureExcelAction.CaptureExcelWithImportGoodsSheet(lengthToCaptureImportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
+                                if(lengthToCaptureTotalSheet > 0)
+                                {
+                                    captureExcelAction.CaptureExcelWithTotalSheet(lengthToCaptureTotalSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
+                                }
+                                if(lengthToCaptureImportGoodsSheet > 0)
+                                {
+                                    captureExcelAction.CaptureExcelWithImportGoodsSheet(lengthToCaptureImportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
+                                }
 
                                 // create file and capture with each productid
                                 string[] productIdSplit = productids.Split(new char[] { ',' }, StringSplitOptions.None);
@@ -134,7 +140,10 @@ namespace CaptureExcelFile
                                     int rowTotalExportGoods =  createTotalRowAction.CreateTotalRowExportGoodsSheet(AppDomain.CurrentDomain.BaseDirectory + prefixFile +"_output3.xlsx", tableExportGoods, productid);
                                     lengthToCaptureExportGoodsSheet = rowTotalExportGoods;
 
-                                    captureExcelAction.CaptureExcelWithExportGoodsSheet(lengthToCaptureExportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
+                                    if(lengthToCaptureExportGoodsSheet > 0)
+                                    {
+                                        captureExcelAction.CaptureExcelWithExportGoodsSheet(lengthToCaptureExportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
+                                    }
                                 }
 
                                 // create description for total sheet
@@ -268,9 +277,18 @@ namespace CaptureExcelFile
                                     lengthToCaptureExportGoodsSheet = rowTotalExportGoods;
 
                                     // capture excel file
-                                    captureExcelAction.CaptureExcelWithTotalSheet(lengthToCaptureTotalSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
-                                    captureExcelAction.CaptureExcelWithImportGoodsSheet(lengthToCaptureImportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
-                                    captureExcelAction.CaptureExcelWithExportGoodsSheet(lengthToCaptureExportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
+                                    if(lengthToCaptureTotalSheet > 0)
+                                    {
+                                        captureExcelAction.CaptureExcelWithTotalSheet(lengthToCaptureTotalSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
+                                    }
+                                    if(lengthToCaptureImportGoodsSheet > 0)
+                                    {
+                                        captureExcelAction.CaptureExcelWithImportGoodsSheet(lengthToCaptureImportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
+                                    }
+                                    if(lengthToCaptureExportGoodsSheet > 0)
+                                    {
+                                        captureExcelAction.CaptureExcelWithExportGoodsSheet(lengthToCaptureExportGoodsSheet, pathToSaveFileImage, folder, prefixFile, lastfixFile);
+                                    }
 
                                     // create description for total sheet
                                     ContentModel content = createDescriptionAction.CreateDescriptionFromTotalSheet(table, productid);
