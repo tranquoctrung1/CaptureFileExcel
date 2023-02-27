@@ -12,3 +12,17 @@ C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFi
 C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\bin\Debug\Aspose.Cells.dll
 C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\bin\Debug\Aspose.Cells.xml
 C:\Users\TQTr\Desktop\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.csproj.CopyComplete
+D:\project\CaptureExcelFile\CaptureExcelFile\bin\Debug\CaptureExcelFile.exe.config
+D:\project\CaptureExcelFile\CaptureExcelFile\bin\Debug\CaptureExcelFile.exe
+D:\project\CaptureExcelFile\CaptureExcelFile\bin\Debug\CaptureExcelFile.pdb
+D:\project\CaptureExcelFile\CaptureExcelFile\bin\Debug\Aspose.Cells.dll
+D:\project\CaptureExcelFile\CaptureExcelFile\bin\Debug\Aspose.Cells.xml
+D:\project\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.csproj.AssemblyReference.cache
+D:\project\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.csproj.SuggestedBindingRedirects.cache
+D:\project\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.Form1.resources
+D:\project\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.Properties.Resources.resources
+D:\project\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.csproj.GenerateResource.cache
+D:\project\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.csproj.CoreCompileInputs.cache
+D:\project\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.csproj.CopyComplete
+D:\project\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.exe
+D:\project\CaptureExcelFile\CaptureExcelFile\obj\Debug\CaptureExcelFile.pdb

@@ -26,8 +26,8 @@ namespace CaptureExcelFile.Actions
                 try
                 {
                    Excel.Workbook wb = xl.Workbooks.Open(System.AppDomain.CurrentDomain.BaseDirectory + prefixFile + "_output.xlsx");
-                    Excel.Range r = wb.Sheets[3].Range[$"A1:T{length + 3}"];
-                    r.CopyPicture(Excel.XlPictureAppearance.xlScreen,
+                   Excel.Range r = wb.Sheets[3].Range[$"A1:T{length + 3}"];
+                   r.CopyPicture(Excel.XlPictureAppearance.xlScreen,
                                    Excel.XlCopyPictureFormat.xlBitmap);
 
                     if (Clipboard.GetDataObject() != null)
