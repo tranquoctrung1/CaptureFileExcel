@@ -12,7 +12,7 @@ using System.Linq;
 using System.Runtime.DesignerServices;
 using System.Text;
 using System.Threading.Tasks;
-using System.Windows.Forms;
+using System.Windows.Forms; 
 using Excel = Microsoft.Office.Interop.Excel;
 
 
@@ -204,11 +204,11 @@ namespace CaptureExcelFile
 
                                 if (content.Different >= 0)
                                 {
-                                    diff = "THỪA";
+                                    diff = "THIẾU";
                                 }
                                 else
                                 {
-                                    diff = "THIẾU";
+                                    diff = "THỪA";
                                 }
 
                                 string description = $"NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {content.StockStartMonth} {importvk} {importncq} {nhatnam} {importsw} {importclk} {importtl} {changeshield} {exportsold} {exporttransport} = {content.StockEndMonth} KHO TỒN {content.MiniStock} {diff} {content.Different} ( {content.OldDescription} )";
@@ -350,11 +350,11 @@ namespace CaptureExcelFile
 
                                     if (content.Different >= 0)
                                     {
-                                        diff = "THỪA";
+                                        diff = "THIẾU";
                                     }
                                     else
                                     {
-                                        diff = "THIẾU";
+                                        diff = "THỪA";
                                     }
 
                                     totalDescription += $"- {productid}: NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {content.StockStartMonth} {importvk} {importncq} {nhatnam} {importsw} {importclk} {importtl} {changeshield} {exportsold} {exporttransport} = {content.StockEndMonth} KHO TỒN {content.MiniStock} {diff} {content.Different} ( {content.OldDescription} ) {Environment.NewLine}";
