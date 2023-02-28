@@ -20,7 +20,6 @@ namespace CaptureExcelFile.Actions
                 // Accessing the first worksheet in the Excel file
                 Worksheet worksheet = workbook.Worksheets[2];
 
-
                 foreach (int i in indexs)
                 {
                     worksheet.Cells.HideRow(i + 1);
@@ -56,7 +55,6 @@ namespace CaptureExcelFile.Actions
                 // Accessing the first worksheet in the Excel file
                 Worksheet worksheet = workbook.Worksheets[3];
 
-
                 foreach (int i in indexs)
                 {
                     worksheet.Cells.HideRow(i + 1);
@@ -89,7 +87,6 @@ namespace CaptureExcelFile.Actions
 
                 // Accessing the first worksheet in the Excel file
                 Worksheet worksheet = workbook.Worksheets[4];
-
 
                 foreach (int i in indexs)
                 {

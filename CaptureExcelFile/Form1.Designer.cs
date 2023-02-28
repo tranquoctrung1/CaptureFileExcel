@@ -34,7 +34,6 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtProductId = new System.Windows.Forms.TextBox();
-            this.btnChoosePathToSaveImage = new System.Windows.Forms.Button();
             this.txtDescription = new System.Windows.Forms.RichTextBox();
             this.txtDate = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
@@ -47,13 +46,13 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 1;
-            this.button2.Text = "5/ Thực thi";
+            this.button2.Text = "4/ Thực thi";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btn_browserFile
             // 
-            this.btn_browserFile.Location = new System.Drawing.Point(26, 111);
+            this.btn_browserFile.Location = new System.Drawing.Point(35, 110);
             this.btn_browserFile.Name = "btn_browserFile";
             this.btn_browserFile.Size = new System.Drawing.Size(75, 23);
             this.btn_browserFile.TabIndex = 3;
@@ -74,28 +73,18 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(280, 111);
+            this.label2.Location = new System.Drawing.Point(222, 114);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(84, 13);
             this.label2.TabIndex = 5;
-            this.label2.Text = "3/ Mã hàng hóa";
+            this.label2.Text = "2/ Mã hàng hóa";
             // 
             // txtProductId
             // 
-            this.txtProductId.Location = new System.Drawing.Point(370, 108);
+            this.txtProductId.Location = new System.Drawing.Point(312, 111);
             this.txtProductId.Name = "txtProductId";
             this.txtProductId.Size = new System.Drawing.Size(212, 20);
             this.txtProductId.TabIndex = 6;
-            // 
-            // btnChoosePathToSaveImage
-            // 
-            this.btnChoosePathToSaveImage.Location = new System.Drawing.Point(126, 109);
-            this.btnChoosePathToSaveImage.Name = "btnChoosePathToSaveImage";
-            this.btnChoosePathToSaveImage.Size = new System.Drawing.Size(136, 23);
-            this.btnChoosePathToSaveImage.TabIndex = 7;
-            this.btnChoosePathToSaveImage.Text = "2/ Chọn nơi lưu ảnh";
-            this.btnChoosePathToSaveImage.UseVisualStyleBackColor = true;
-            this.btnChoosePathToSaveImage.Click += new System.EventHandler(this.btnChoosePathToSaveImage_Click);
             // 
             // txtDescription
             // 
@@ -107,7 +96,7 @@
             // 
             // txtDate
             // 
-            this.txtDate.Location = new System.Drawing.Point(734, 109);
+            this.txtDate.Location = new System.Drawing.Point(718, 114);
             this.txtDate.Name = "txtDate";
             this.txtDate.Size = new System.Drawing.Size(200, 20);
             this.txtDate.TabIndex = 11;
@@ -115,16 +104,16 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(656, 111);
+            this.label3.Location = new System.Drawing.Point(640, 116);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(72, 13);
             this.label3.TabIndex = 12;
-            this.label3.Text = "4/ Chọn ngày";
+            this.label3.Text = "3/ Chọn ngày";
             // 
             // ckSplit
             // 
             this.ckSplit.AutoSize = true;
-            this.ckSplit.Location = new System.Drawing.Point(588, 111);
+            this.ckSplit.Location = new System.Drawing.Point(530, 114);
             this.ckSplit.Name = "ckSplit";
             this.ckSplit.Size = new System.Drawing.Size(51, 17);
             this.ckSplit.TabIndex = 14;
@@ -141,7 +130,6 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtDate);
             this.Controls.Add(this.txtDescription);
-            this.Controls.Add(this.btnChoosePathToSaveImage);
             this.Controls.Add(this.txtProductId);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.lbTitle);
@@ -164,7 +152,6 @@
         private System.Windows.Forms.Label lbTitle;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtProductId;
-        private System.Windows.Forms.Button btnChoosePathToSaveImage;
         private System.Windows.Forms.RichTextBox txtDescription;
         private System.Windows.Forms.DateTimePicker txtDate;
         private System.Windows.Forms.Label label3;

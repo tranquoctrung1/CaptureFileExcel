@@ -14,7 +14,7 @@
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
+    <PlatformTarget>x64</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -44,6 +44,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -61,6 +62,7 @@
     <Compile Include="Actions\CreateDescriptionAction.cs" />
     <Compile Include="Actions\CreateFolderImageAction.cs" />
     <Compile Include="Actions\CreateTotalRowAction.cs" />
+    <Compile Include="Actions\DeleteFolderAction.cs" />
     <Compile Include="Actions\HideRowAction.cs" />
     <Compile Include="Actions\ReadFileExcelAction.cs" />
     <Compile Include="Actions\ValidationExcelFileAction.cs" />

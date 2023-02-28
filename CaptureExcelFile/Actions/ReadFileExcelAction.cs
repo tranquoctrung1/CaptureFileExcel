@@ -25,6 +25,8 @@ namespace CaptureExcelFile.Actions
                 DtSet = new System.Data.DataSet();
                 MyCommand.Fill(DtSet);
                 MyConnection.Close();
+                MyConnection.Dispose();
+                MyCommand.Dispose();
 
                 if (DtSet.Tables.Count > 0)
                 {
@@ -57,6 +59,8 @@ namespace CaptureExcelFile.Actions
                 DtSet = new System.Data.DataSet();
                 MyCommand.Fill(DtSet);
                 MyConnection.Close();
+                MyConnection.Dispose();
+                MyCommand.Dispose();
 
                 if (DtSet.Tables.Count > 0)
                 {
@@ -89,6 +93,8 @@ namespace CaptureExcelFile.Actions
                 DtSet = new System.Data.DataSet();
                 MyCommand.Fill(DtSet);
                 MyConnection.Close();
+                MyConnection.Dispose();
+                MyCommand.Dispose();
 
                 if (DtSet.Tables.Count > 0)
                 {

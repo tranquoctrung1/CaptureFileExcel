@@ -4,6 +4,7 @@ using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
@@ -28,6 +29,7 @@ namespace CaptureExcelFile
         CreateDescriptionAction createDescriptionAction;
         CreateFolderImageAction createFolderImageAction;
         CreateTotalRowAction createTotalRowAction;
+        DeleteFolderAction deleteFolderAction;
         int lengthToCaptureTotalSheet = 2;
         int lengthToCaptureImportGoodsSheet = 2;
         int lengthToCaptureExportGoodsSheet = 2;
@@ -44,6 +46,8 @@ namespace CaptureExcelFile
             checkSplit = false;
             createFolderImageAction = new CreateFolderImageAction();
             createTotalRowAction = new CreateTotalRowAction();
+            deleteFolderAction = new DeleteFolderAction();
+            pathToSaveFileImage = ConfigurationManager.AppSettings["images"];
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -68,7 +72,8 @@ namespace CaptureExcelFile
                             // merge productid
                             if(checkSplit == false)
                             {
-                                string folder = $"{DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}";
+                                //string folder = $"{DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}";
+                                string folder = $"images";
                                 string lastfixFile = $"{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}";
                                 string prefixFile = productids.Replace(',', '_');
 
@@ -104,8 +109,7 @@ namespace CaptureExcelFile
                                 int rowTotalImportGoods =  createTotalRowAction.CreateTotalRowImportGoodsSheet(AppDomain.CurrentDomain.BaseDirectory +prefixFile +"_output2.xlsx",tableImportGoods, productids);
                                 lengthToCaptureImportGoodsSheet = rowTotalImportGoods;
 
-                                
-
+                                deleteFolderAction.DeleteFolder(pathToSaveFileImage, folder);
                                 createFolderImageAction.CreateFolderImage(pathToSaveFileImage, folder);
 
                                 // capture excel file
@@ -221,9 +225,11 @@ namespace CaptureExcelFile
 
                                 string totalDescription = "";
 
-                                string folder = $"{DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}";
+                                //string folder = $"{DateTime.Now.Day}_{DateTime.Now.Month}_{DateTime.Now.Year}";
+                                string folder = $"images";
                                 string lastfixFile = $"{DateTime.Now.Hour}_{DateTime.Now.Minute}_{DateTime.Now.Second}";
 
+                                deleteFolderAction.DeleteFolder(pathToSaveFileImage, folder);
                                 createFolderImageAction.CreateFolderImage(pathToSaveFileImage, folder);
 
                                 foreach (string productid in productidSplit)
@@ -397,28 +403,17 @@ namespace CaptureExcelFile
             }
         }
 
-        private void btnChoosePathToSaveImage_Click(object sender, EventArgs e)
-        {
-            FolderBrowserDialog of = new FolderBrowserDialog();
-
-            if (of.ShowDialog() == DialogResult.OK)
-            {
-                pathToSaveFileImage = of.SelectedPath;
-
-            }
-
-        }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             DateTime now = DateTime.Now;
+            DateTime expiredDate = new DateTime(2023, 05, 01, 0, 0, 0);
 
-            if(now.Year >= 2023 && now.Month >= 5 && now.Day >= 1)
+            if (DateTime.Compare(now, expiredDate) >= 0)
             {
                 lbTitle.Text = "PHẦN MỀM ĐÃ HẾT HẠN. CẦN PHẢI KÍCH HOẠT ĐỂ DÙNG LẠI PHẦN MỀM!!!";
                 lbTitle.Location = new System.Drawing.Point(10, 29);
                 lbTitle.ForeColor = Color.Red;
-                btnChoosePathToSaveImage.Enabled = false;
                 btn_browserFile.Enabled = false;
                 button2.Enabled = false;
                 txtDate.Enabled = false;
