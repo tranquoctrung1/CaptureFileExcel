@@ -357,7 +357,7 @@ namespace CaptureExcelFile
                                         diff = "THỪA";
                                     }
 
-                                    totalDescription += $"- {productid}: NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {content.StockStartMonth} {importvk} {importncq} {nhatnam} {importsw} {importclk} {importtl} {changeshield} {exportsold} {exporttransport} = {content.StockEndMonth} KHO TỒN {content.MiniStock} {diff} {content.Different} ( {content.OldDescription} ) {Environment.NewLine}";
+                                    totalDescription += $"- NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {content.StockStartMonth} {importvk} {importncq} {nhatnam} {importsw} {importclk} {importtl} {changeshield} {exportsold} {exporttransport} = {content.StockEndMonth} KHO TỒN {content.MiniStock} {diff} {content.Different} ( {content.OldDescription} ) {Environment.NewLine}";
                                 }
 
                                 txtDescription.Text = totalDescription;
