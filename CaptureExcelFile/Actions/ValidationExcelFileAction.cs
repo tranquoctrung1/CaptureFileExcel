@@ -20,6 +20,8 @@ namespace CaptureExcelFile.Actions
             List<int> list2 = new List<int>();
             listIndex.Add(list2);
 
+            List<string> splitProduct = listProductId.Split(new char[] { ',' }, StringSplitOptions.None).ToList();
+
             if (table.Rows.Count > 0)
             {
                 int count = 0;
@@ -31,7 +33,10 @@ namespace CaptureExcelFile.Actions
                         {
                             if (row[0].ToString() != "")
                             {
-                                if (listProductId.ToLower().Contains(row[0].ToString().ToLower()) == false)
+                                string find = splitProduct.Find(x => x.ToLower() == row[0].ToString().ToLower());
+
+                                //if (listProductId.ToLower().Contains(row[0].ToString().ToLower()) == false)
+                                if(find == "" ||  find == null)
                                 {
                                     listIndex[0].Add(count);
                                 }
@@ -68,6 +73,8 @@ namespace CaptureExcelFile.Actions
             List<int> list2 = new List<int>();
             listIndex.Add(list2);
 
+            List<string> splitProduct = listProductId.Split(new char[] { ',' }, StringSplitOptions.None).ToList();
+
             if (table.Rows.Count > 0)
             {
                 int count = 0;
@@ -79,7 +86,10 @@ namespace CaptureExcelFile.Actions
                         {
                             if (row[3].ToString() != "")
                             {
-                                if (listProductId.ToLower().Contains(row[3].ToString().ToLower()) == false)
+                                string find = splitProduct.Find(x => x.ToLower() == row[3].ToString().ToLower());
+
+                                //if (listProductId.ToLower().Contains(row[3].ToString().ToLower()) == false)
+                                if (find == "" || find == null)    
                                 {
                                     listIndex[0].Add(count);
                                 }
@@ -119,6 +129,8 @@ namespace CaptureExcelFile.Actions
             List<int> list2 = new List<int>();
             listIndex.Add(list2);
 
+            List<string> splitProduct = listProductId.Split(new char[] { ',' }, StringSplitOptions.None).ToList();
+
             if (table.Rows.Count > 0)
             {
                 int count = 0;
@@ -130,7 +142,10 @@ namespace CaptureExcelFile.Actions
                         {
                             if (row[3].ToString() != "")
                             {
-                                if (listProductId.ToLower().Contains(row[3].ToString().ToLower()) == false )
+                                string find = splitProduct.Find(x => x.ToLower() == row[3].ToString().ToLower());
+
+                                //if (listProductId.ToLower().Contains(row[3].ToString().ToLower()) == false )
+                                if(find == "" || find == null)
                                 {
                                     listIndex[0].Add(count);
                                 }

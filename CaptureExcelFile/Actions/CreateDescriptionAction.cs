@@ -14,6 +14,9 @@ namespace CaptureExcelFile.Actions
         public ContentModel CreateDescriptionFromTotalSheet(System.Data.DataTable table, string listProductId)
         {
             ContentModel el = new ContentModel();
+
+            List<string> splitProductId = listProductId.Split(new char[] { ',' }, StringSplitOptions.None).ToList();
+
             if(table.Rows.Count > 0)
             {
                 foreach(DataRow row in table.Rows)
@@ -22,7 +25,10 @@ namespace CaptureExcelFile.Actions
                     {
                         if (row[0].ToString() != "")
                         {
-                            if (listProductId.Contains(row[0].ToString()) == true)
+                            string find = splitProductId.Find(x => x.ToLower() == row[0].ToString().ToLower());
+
+                            //if (listProductId.Contains(row[0].ToString()) == true)
+                            if(find != null && find != "")
                             {
 
                                 if(el.ProductName == null || el.ProductName == "")
