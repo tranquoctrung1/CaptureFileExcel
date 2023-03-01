@@ -156,6 +156,8 @@ namespace CaptureExcelFile
 
                                 string diff = "";
                                 string contentStockStartMonth = "";
+                                string contentStockEndMonth = "";
+
 
                                 string commonContentImportAndExport = "";
                                 if(content.ImportVK == 0 && content.ImportNCQ == 0 && content.NhatNam == 0 && content.ImportCLK  == 0 && content.ImportSW == 0 && content.ImportTL == 0 && content.ChangeShield == 0 && content.ExportSold == 0 && content.ExportTransport == 0)
@@ -218,8 +220,13 @@ namespace CaptureExcelFile
                                 {
                                     contentStockStartMonth = "THỪA";
                                 }
+                                if(content.StockEndMonth < 0)
+                                {
+                                    contentStockEndMonth = "THỪA";
+                                }
 
-                                string description = $"NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {contentStockStartMonth} {Math.Abs(content.StockStartMonth)} {commonContentImportAndExport} = {content.StockEndMonth} KHO TỒN {content.MiniStock} {diff} {content.Different} ( {content.OldDescription} )";
+
+                                string description = $"NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {contentStockStartMonth} {Math.Abs(content.StockStartMonth)} {commonContentImportAndExport} = {contentStockEndMonth} {Math.Abs(content.StockEndMonth)} KHO TỒN {content.MiniStock} {diff} {Math.Abs(content.Different)} ( {content.OldDescription} )";
 
                                 txtDescription.Text = description;
                             }
@@ -309,6 +316,7 @@ namespace CaptureExcelFile
 
                                     string diff = "";
                                     string contentStockStartMonth = "";
+                                    string contentStockEndMonth = "";
 
                                     string commonContentImportAndExport = "";
                                     if (content.ImportVK == 0 && content.ImportNCQ == 0 && content.NhatNam == 0 && content.ImportCLK == 0 && content.ImportSW == 0 && content.ImportTL == 0 && content.ChangeShield == 0 && content.ExportSold == 0 && content.ExportTransport == 0)
@@ -371,8 +379,12 @@ namespace CaptureExcelFile
                                     {
                                         contentStockStartMonth = "THỪA";
                                     }
+                                    if(content.StockEndMonth < 0)
+                                    {
+                                        contentStockEndMonth = "THỪA";
+                                    }
 
-                                    totalDescription += $"- NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {contentStockStartMonth} {content.StockStartMonth} {commonContentImportAndExport} = {content.StockEndMonth} KHO TỒN {content.MiniStock} {diff} {content.Different} ( {content.OldDescription} ) {Environment.NewLine}";
+                                    totalDescription += $"- NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {contentStockStartMonth} {Math.Abs(content.StockStartMonth)} {commonContentImportAndExport} = {contentStockEndMonth} {Math.Abs(content.StockEndMonth)} KHO TỒN {content.MiniStock} {diff} {Math.Abs(content.Different)} ( {content.OldDescription} ) {Environment.NewLine}";
                                 }
 
                                 txtDescription.Text = totalDescription;
