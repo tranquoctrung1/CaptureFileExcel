@@ -9,6 +9,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
+using System.Net.Mime;
 using System.Runtime.DesignerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -153,53 +154,55 @@ namespace CaptureExcelFile
                                 // create description for total sheet
                                 ContentModel content = createDescriptionAction.CreateDescriptionFromTotalSheet(table, productids);
 
-                                string importvk = "";
-                                string importncq = "";
-                                string nhatnam = "";
-                                string importsw = "";
-                                string importclk = "";
-                                string importtl = "";
-                                string changeshield = "";
-                                string exportsold = "";
-                                string exporttransport = "";
                                 string diff = "";
-                                if (content.ImportVK != 0)
-                                {
-                                    importvk = $", NHẬP VK {content.ImportVK} ";
-                                }
+                                string contentStockStartMonth = "";
 
-                                if (content.ImportNCQ != 0)
+                                string commonContentImportAndExport = "";
+                                if(content.ImportVK == 0 && content.ImportNCQ == 0 && content.NhatNam == 0 && content.ImportCLK  == 0 && content.ImportSW == 0 && content.ImportTL == 0 && content.ChangeShield == 0 && content.ExportSold == 0 && content.ExportTransport == 0)
                                 {
-                                    importncq = $",NHẬP NCQ {content.ImportNCQ} ";
+                                    commonContentImportAndExport = "KHÔNG NHẬP, KHÔNG XUẤT";
                                 }
+                                else
+                                {
+                                    if (content.ImportVK != 0)
+                                    {
+                                        commonContentImportAndExport += $", NHẬP VK {content.ImportVK} ";
+                                    }
 
-                                if (content.NhatNam != 0)
-                                {
-                                    nhatnam = $",NHẤT NAM {content.NhatNam} ";
-                                }
-                                if (content.ImportCLK != 0)
-                                {
-                                    importclk = $", NHẬP CLK {content.ImportCLK} ";
-                                }
-                                if (content.ImportSW != 0)
-                                {
-                                    importsw = $", NHẬP SW {content.ImportSW} ";
-                                }
-                                if (content.ImportTL != 0)
-                                {
-                                    importtl = $",NHẬP TL {content.ImportTL} ";
-                                }
-                                if (content.ChangeShield != 0)
-                                {
-                                    changeshield = $", ĐỔI VỎ {content.ChangeShield} ";
-                                }
-                                if (content.ExportSold != 0)
-                                {
-                                    exportsold = $", XUẤT BÁN {content.ExportSold} ";
-                                }
-                                if (content.ExportTransport != 0)
-                                {
-                                    exporttransport = $", XUẤT ĐIỀU CHUYỂN {content.ExportTransport} ";
+                                    if (content.ImportNCQ != 0)
+                                    {
+                                        commonContentImportAndExport += $",NHẬP NCQ {content.ImportNCQ} ";
+                                    }
+
+                                    if (content.NhatNam != 0)
+                                    {
+                                        commonContentImportAndExport += $",NHẤT NAM {content.NhatNam} ";
+                                    }
+                                    if (content.ImportCLK != 0)
+                                    {
+                                        commonContentImportAndExport += $", NHẬP CLK {content.ImportCLK} ";
+                                    }
+                                    if (content.ImportSW != 0)
+                                    {
+                                        commonContentImportAndExport += $", NHẬP SW {content.ImportSW} ";
+                                    }
+                                    if (content.ImportTL != 0)
+                                    {
+                                        commonContentImportAndExport += $",NHẬP TL {content.ImportTL} ";
+                                    }
+                                    if (content.ChangeShield != 0)
+                                    {
+                                        commonContentImportAndExport += $", ĐỔI VỎ {content.ChangeShield} ";
+                                    }
+                                    if (content.ExportSold != 0)
+                                    {
+                                        commonContentImportAndExport += $", XUẤT BÁN {content.ExportSold} ";
+                                    }
+                                    if (content.ExportTransport != 0)
+                                    {
+                                        commonContentImportAndExport += $", XUẤT ĐIỀU CHUYỂN {content.ExportTransport} ";
+                                    }
+
                                 }
 
                                 if (content.Different >= 0)
@@ -211,7 +214,12 @@ namespace CaptureExcelFile
                                     diff = "THỪA";
                                 }
 
-                                string description = $"NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {content.StockStartMonth} {importvk} {importncq} {nhatnam} {importsw} {importclk} {importtl} {changeshield} {exportsold} {exporttransport} = {content.StockEndMonth} KHO TỒN {content.MiniStock} {diff} {content.Different} ( {content.OldDescription} )";
+                                if(content.StockStartMonth < 0)
+                                {
+                                    contentStockStartMonth = "THỪA";
+                                }
+
+                                string description = $"NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {contentStockStartMonth} {Math.Abs(content.StockStartMonth)} {commonContentImportAndExport} = {content.StockEndMonth} KHO TỒN {content.MiniStock} {diff} {content.Different} ( {content.OldDescription} )";
 
                                 txtDescription.Text = description;
                             }
@@ -299,53 +307,55 @@ namespace CaptureExcelFile
                                     // create description for total sheet
                                     ContentModel content = createDescriptionAction.CreateDescriptionFromTotalSheet(table, productid);
 
-                                    string importvk = "";
-                                    string importncq = "";
-                                    string nhatnam = "";
-                                    string importsw = "";
-                                    string importclk = "";
-                                    string importtl = "";
-                                    string changeshield = "";
-                                    string exportsold = "";
-                                    string exporttransport = "";
                                     string diff = "";
-                                    if (content.ImportVK != 0)
-                                    {
-                                        importvk = $", NHẬP VK {content.ImportVK} ";
-                                    }
+                                    string contentStockStartMonth = "";
 
-                                    if (content.ImportNCQ != 0)
+                                    string commonContentImportAndExport = "";
+                                    if (content.ImportVK == 0 && content.ImportNCQ == 0 && content.NhatNam == 0 && content.ImportCLK == 0 && content.ImportSW == 0 && content.ImportTL == 0 && content.ChangeShield == 0 && content.ExportSold == 0 && content.ExportTransport == 0)
                                     {
-                                        importncq = $",NHẬP NCQ {content.ImportNCQ} ";
+                                        commonContentImportAndExport = "KHÔNG NHẬP, KHÔNG XUẤT";
                                     }
+                                    else
+                                    {
+                                        if (content.ImportVK != 0)
+                                        {
+                                            commonContentImportAndExport += $", NHẬP VK {content.ImportVK} ";
+                                        }
 
-                                    if (content.NhatNam != 0)
-                                    {
-                                        nhatnam = $",NHẤT NAM {content.NhatNam} ";
-                                    }
-                                    if (content.ImportCLK != 0)
-                                    {
-                                        importclk = $", NHẬP CLK {content.ImportCLK} ";
-                                    }
-                                    if (content.ImportSW != 0)
-                                    {
-                                        importsw = $", NHẬP SW {content.ImportSW} ";
-                                    }
-                                    if (content.ImportTL != 0)
-                                    {
-                                        importtl = $",NHẬP TL {content.ImportTL} ";
-                                    }
-                                    if (content.ChangeShield != 0)
-                                    {
-                                        changeshield = $", ĐỔI VỎ {content.ChangeShield} ";
-                                    }
-                                    if (content.ExportSold != 0)
-                                    {
-                                        exportsold = $", XUẤT BÁN {content.ExportSold} ";
-                                    }
-                                    if (content.ExportTransport != 0)
-                                    {
-                                        exporttransport = $", XUẤT ĐIỀU CHUYỂN {content.ExportTransport} ";
+                                        if (content.ImportNCQ != 0)
+                                        {
+                                            commonContentImportAndExport += $",NHẬP NCQ {content.ImportNCQ} ";
+                                        }
+
+                                        if (content.NhatNam != 0)
+                                        {
+                                            commonContentImportAndExport += $",NHẤT NAM {content.NhatNam} ";
+                                        }
+                                        if (content.ImportCLK != 0)
+                                        {
+                                            commonContentImportAndExport += $", NHẬP CLK {content.ImportCLK} ";
+                                        }
+                                        if (content.ImportSW != 0)
+                                        {
+                                            commonContentImportAndExport += $", NHẬP SW {content.ImportSW} ";
+                                        }
+                                        if (content.ImportTL != 0)
+                                        {
+                                            commonContentImportAndExport += $",NHẬP TL {content.ImportTL} ";
+                                        }
+                                        if (content.ChangeShield != 0)
+                                        {
+                                            commonContentImportAndExport += $", ĐỔI VỎ {content.ChangeShield} ";
+                                        }
+                                        if (content.ExportSold != 0)
+                                        {
+                                            commonContentImportAndExport += $", XUẤT BÁN {content.ExportSold} ";
+                                        }
+                                        if (content.ExportTransport != 0)
+                                        {
+                                            commonContentImportAndExport += $", XUẤT ĐIỀU CHUYỂN {content.ExportTransport} ";
+                                        }
+
                                     }
 
                                     if (content.Different >= 0)
@@ -357,7 +367,12 @@ namespace CaptureExcelFile
                                         diff = "THỪA";
                                     }
 
-                                    totalDescription += $"- NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {content.StockStartMonth} {importvk} {importncq} {nhatnam} {importsw} {importclk} {importtl} {changeshield} {exportsold} {exporttransport} = {content.StockEndMonth} KHO TỒN {content.MiniStock} {diff} {content.Different} ( {content.OldDescription} ) {Environment.NewLine}";
+                                    if (content.StockStartMonth < 0)
+                                    {
+                                        contentStockStartMonth = "THỪA";
+                                    }
+
+                                    totalDescription += $"- NGÀY {txtDate.Value.Day}/{txtDate.Value.Month} {content.ProductName} TỒN ĐẦU {contentStockStartMonth} {content.StockStartMonth} {commonContentImportAndExport} = {content.StockEndMonth} KHO TỒN {content.MiniStock} {diff} {content.Different} ( {content.OldDescription} ) {Environment.NewLine}";
                                 }
 
                                 txtDescription.Text = totalDescription;
