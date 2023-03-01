@@ -26,7 +26,7 @@ namespace CaptureExcelFile.Actions
                 try
                 {
                    Excel.Workbook wb = xl.Workbooks.Open(System.AppDomain.CurrentDomain.BaseDirectory + prefixFile + "_output.xlsx");
-                   Excel.Range r = wb.Sheets[3].Range[$"A1:T{length + 3}"];
+                   Excel.Range r = wb.Sheets[3].Range[$"A1:R{length + 2}"];
                    r.CopyPicture(Excel.XlPictureAppearance.xlScreen,
                                    Excel.XlCopyPictureFormat.xlBitmap);
 
@@ -79,7 +79,7 @@ namespace CaptureExcelFile.Actions
                 try
                 {
                     Excel.Workbook wb = xl.Workbooks.Open(System.AppDomain.CurrentDomain.BaseDirectory +prefixFile + "_output2.xlsx");
-                    Excel.Range r = wb.Sheets[4].Range[$"A1:T{length + 3}"];
+                    Excel.Range r = wb.Sheets[4].Range[$"A1:R{length}"];
                     r.CopyPicture(Excel.XlPictureAppearance.xlScreen,
                                    Excel.XlCopyPictureFormat.xlBitmap);
 
@@ -132,7 +132,7 @@ namespace CaptureExcelFile.Actions
                 try
                 {
                     Excel.Workbook wb = xl.Workbooks.Open(System.AppDomain.CurrentDomain.BaseDirectory + prefixFile +"_output3.xlsx");
-                    Excel.Range r = wb.Sheets[5].Range[$"A1:T{length + 3}"];
+                    Excel.Range r = wb.Sheets[5].Range[$"A1:L{length}"];
                     r.CopyPicture(Excel.XlPictureAppearance.xlScreen,
                                    Excel.XlCopyPictureFormat.xlBitmap);
 
